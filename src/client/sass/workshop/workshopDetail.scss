@@ -1,0 +1,7 @@
+@import "../util/spacing";
+@import "../util/variables";
+
+.workshop-detail {
+  @include margin-responsive();
+  padding-top: 70px;
+}

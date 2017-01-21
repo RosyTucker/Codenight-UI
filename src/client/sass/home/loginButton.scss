@@ -1,0 +1,21 @@
+@import "../util/variables";
+
+$button-padding: 20px 30px;
+$button-margin: 30px 20px;
+
+.login-button {
+  margin: $button-margin;
+  background-color: $primary-color;
+  border: thin solid $dark-primary-color;
+  color: $lightest-text-color;
+  padding: $button-padding;
+  font-weight: $light-font-weight;
+  font-size: $large-font-size;
+  text-decoration: none;
+  text-shadow: 0;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $dark-primary-color;
+  }
+}

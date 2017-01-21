@@ -1,0 +1,4 @@
+{
+  "verbose": true,
+  "ignore": ["test/*", "dist/*", "src/client"]
+}

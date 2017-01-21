@@ -1,0 +1,8 @@
+.idea
+.iml
+dist
+npm-debug*
+.DS_Store
+node_modules
+env.sh
+*.rdb

@@ -1,0 +1,42 @@
+@import "../util/spacing";
+@import "../util/variables";
+
+.technology-ratings {
+  list-style: none;
+  display: flex;
+
+  .technology-rating {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    font-weight: $light-font-weight;
+
+    .technology-level-1, .technology-level-2, .technology-level-3, .technology-level-4, .technology-level-5 {
+      font-size: $medium-font-size;
+      color: $accent-color;
+
+      &:before {
+        font-family: FontAwesome, fantasy;
+      }
+    }
+
+    .technology-level-1:before {
+      content: $fa-var-star;
+    }
+    .technology-level-2:before {
+      content: $fa-var-star $fa-var-star;
+    }
+
+    .technology-level-3:before {
+      content: $fa-var-star $fa-var-star $fa-var-star;
+    }
+
+    .technology-level-4:before {
+      content: $fa-var-star $fa-var-star $fa-var-star $fa-var-star;
+    }
+
+    .technology-level-5:before {
+      content: $fa-var-star $fa-var-star $fa-var-star $fa-var-star $fa-var-star;
+    }
+  }
+}

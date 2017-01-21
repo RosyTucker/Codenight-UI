@@ -1,0 +1,27 @@
+@import "../util/variables";
+
+.banner-container {
+  position: relative;
+  text-align: center;
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .banner-message {
+    position: absolute;
+    left: 50%;
+    top: 85%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    color: $lightest-text-color;
+    h1 {
+      font-weight: $bold-font-weight;
+      font-size: $title-font-size;
+    }
+    h2 {
+      font-weight: $light-font-weight;
+      font-size: $large-font-size;
+    }
+  }
+}
