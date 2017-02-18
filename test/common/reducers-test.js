@@ -1,6 +1,6 @@
-import { expect } from '../../TestHelpers';
-import { ActionTypes } from '../../../../src/client/js/common/Constants';
-import reducers from '../../../../src/client/js/common/reducers';
+import { expect } from '../TestHelpers';
+import { ActionTypes } from '../../src/client/js/common/Constants';
+import reducers from '../../src/client/js/common/reducers';
 
 describe('reducers.js', () => {
   it('should set currentUser to an empty object by default', () => {

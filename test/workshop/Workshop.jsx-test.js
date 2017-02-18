@@ -1,7 +1,7 @@
-import { React, expect, Enzyme, Sandbox, ComponentHelpers } from '../../TestHelpers';
+import { React, expect, Enzyme, Sandbox, ComponentHelpers } from '../TestHelpers';
 import { Link } from 'react-router';
-import Workshop from '../../../../src/client/js/workshop/Workshop';
-import AppRoutes from '../../../../src/client/js/navigation/AppRoutes';
+import Workshop from '../../src/client/js/workshop/Workshop';
+import AppRoutes from '../../src/client/js/navigation/AppRoutes';
 
 describe('Workshop.jsx', () => {
   const sandbox = new Sandbox();

@@ -1,8 +1,8 @@
-import { React, expect, Enzyme, Sandbox } from '../../TestHelpers';
-import Nav from '../../../../src/client/js/navigation/Nav';
-import NavItem from '../../../../src/client/js/navigation/NavItem';
-import Strings from '../../../../src/client/js/common/Strings';
-import AppRoutes from '../../../../src/client/js/navigation/AppRoutes';
+import { React, expect, Enzyme, Sandbox } from '../TestHelpers';
+import Nav from '../../src/client/js/navigation/Nav';
+import NavItem from '../../src/client/js/navigation/NavItem';
+import Strings from '../../src/client/js/common/Strings';
+import AppRoutes from '../../src/client/js/navigation/AppRoutes';
 
 describe('Nav.jsx', () => {
   const sandbox = new Sandbox();

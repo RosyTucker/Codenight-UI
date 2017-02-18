@@ -1,5 +1,5 @@
-import { expect } from '../../TestHelpers';
-import Utils from '../../../../src/client/js/common/Utils';
+import { expect } from '../TestHelpers';
+import Utils from '../../src/client/js/common/Utils';
 
 describe('Utils.js', () => {
   describe('formattedDate', () => {

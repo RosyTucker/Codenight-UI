@@ -1,6 +1,6 @@
-import { React, expect, Enzyme, Sandbox, ComponentHelpers } from '../../TestHelpers';
-import TechnologyRatings from '../../../../src/client/js/profile/TechnologyRatings';
-import TechnologyRating from '../../../../src/client/js/profile/TechnologyRating';
+import { React, expect, Enzyme, Sandbox, ComponentHelpers } from '../TestHelpers';
+import TechnologyRatings from '../../src/client/js/profile/TechnologyRatings';
+import TechnologyRating from '../../src/client/js/profile/TechnologyRating';
 
 describe('TechnologyRatings.jsx', () => {
   const sandbox = new Sandbox();

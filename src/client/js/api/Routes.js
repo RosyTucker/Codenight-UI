@@ -1,6 +1,6 @@
-const root = '/api/v1';
+const apiRoot = 'http://localhost:4000';
 
-const route = suffix => `${root}${suffix}`;
+const route = suffix => `${apiRoot}${suffix}`;
 
 export default {
   login: route('/login'),

@@ -1,5 +1,5 @@
-import { React, expect, Enzyme } from '../../TestHelpers';
-import TechnologyRating from '../../../../src/client/js/profile/TechnologyRating';
+import { React, expect, Enzyme } from '../TestHelpers';
+import TechnologyRating from '../../src/client/js/profile/TechnologyRating';
 
 describe('TechnologyRating.jsx', () => {
   let technologyRating;

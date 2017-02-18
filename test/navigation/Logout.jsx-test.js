@@ -1,5 +1,5 @@
-import { React, expect, Enzyme, sinon } from '../../TestHelpers';
-import { Logout } from '../../../../src/client/js/navigation/Logout';
+import { React, expect, Enzyme, sinon } from '../TestHelpers';
+import { Logout } from '../../src/client/js/navigation/Logout';
 
 describe('Logout.jsx', () => {
   let logoutComp;

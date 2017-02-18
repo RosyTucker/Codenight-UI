@@ -1,6 +1,6 @@
-import { React, expect, Enzyme, Sandbox, ComponentHelpers } from '../../TestHelpers';
-import Workshops from '../../../../src/client/js/workshop/Workshops';
-import Workshop from '../../../../src/client/js/workshop/Workshop';
+import { React, expect, Enzyme, Sandbox, ComponentHelpers } from '../TestHelpers';
+import Workshops from '../../src/client/js/workshop/Workshops';
+import Workshop from '../../src/client/js/workshop/Workshop';
 
 const defaultDate = 'Sat May 28 2016 18:30:00 GMT+0100 (BST)';
 const defaultLocation = 'Some location';

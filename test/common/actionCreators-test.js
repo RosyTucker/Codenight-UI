@@ -1,8 +1,8 @@
-import { Sandbox, sinon, expect, PromiseHelper } from '../../TestHelpers';
-import * as ActionCreators from '../../../../src/client/js/common/actionCreator';
-import { ActionTypes } from '../../../../src/client/js/common/Constants';
-import { UserService } from '../../../../src/client/js/api';
-import Routes from '../../../../src/client/js/api/Routes';
+import { Sandbox, sinon, expect, PromiseHelper } from '../TestHelpers';
+import * as ActionCreators from '../../src/client/js/common/actionCreator';
+import { ActionTypes } from '../../src/client/js/common/Constants';
+import { UserService } from '../../src/client/js/api';
+import Routes from '../../src/client/js/api/Routes';
 
 describe('actionCreators.js', () => {
   const sandbox = new Sandbox();

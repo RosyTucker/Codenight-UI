@@ -1,8 +1,8 @@
-import { React, expect, Enzyme, Sandbox, ComponentHelpers } from '../../TestHelpers';
-import { Profile } from '../../../../src/client/js/profile/Profile';
-import TechnologyRatings from '../../../../src/client/js/profile/TechnologyRatings';
-import Workshops from '../../../../src/client/js/workshop/Workshops';
-import Strings from '../../../../src/client/js/common/Strings';
+import { React, expect, Enzyme, Sandbox, ComponentHelpers } from '../TestHelpers';
+import { Profile } from '../../src/client/js/profile/Profile';
+import TechnologyRatings from '../../src/client/js/profile/TechnologyRatings';
+import Workshops from '../../src/client/js/workshop/Workshops';
+import Strings from '../../src/client/js/common/Strings';
 
 describe('Profile.jsx', () => {
   const sandbox = new Sandbox();

@@ -1,13 +1,13 @@
-import { React, expect, Enzyme, Sandbox, ComponentHelpers } from '../../TestHelpers';
+import { React, expect, Enzyme, Sandbox, ComponentHelpers } from '../TestHelpers';
 import { Router, Route } from 'react-router';
-import AppRouter from '../../../../src/client/js/navigation/AppRouter';
-import AppWithNav from '../../../../src/client/js/navigation/AppWithNav';
-import Home from '../../../../src/client/js/home/Home';
-import Profile from '../../../../src/client/js/profile/Profile';
-import ProblemsHome from '../../../../src/client/js/problems/ProblemsHome';
-import LoggedInApp from '../../../../src/client/js/navigation/LoggedInApp';
-import Logout from '../../../../src/client/js/navigation/Logout';
-import AppRoutes from '../../../../src/client/js/navigation/AppRoutes';
+import AppRouter from '../../src/client/js/navigation/AppRouter';
+import AppWithNav from '../../src/client/js/navigation/AppWithNav';
+import Home from '../../src/client/js/home/Home';
+import Profile from '../../src/client/js/profile/Profile';
+import ProblemsHome from '../../src/client/js/problems/ProblemsHome';
+import LoggedInApp from '../../src/client/js/navigation/LoggedInApp';
+import Logout from '../../src/client/js/navigation/Logout';
+import AppRoutes from '../../src/client/js/navigation/AppRoutes';
 
 describe('AppRouter.jsx', () => {
   const sandbox = new Sandbox();

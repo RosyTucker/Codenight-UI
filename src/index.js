@@ -3,7 +3,7 @@ import helmet from 'helmet';
 
 const app = express();
 
-const isProduction = process.env.NODE_ENV === 'poduction';
+const isProduction = process.env.NODE_ENV === 'production';
 
 app.use(express.static(`${__dirname}/client`));
 app.use(helmet());
