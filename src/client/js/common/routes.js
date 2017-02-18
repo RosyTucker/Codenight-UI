@@ -5,5 +5,5 @@ const route = suffix => `${apiRoot}${suffix}`;
 export default {
   login: route('/login'),
   logout: route('/logout'),
-  currentUser: route('/currentUser')
+  currentUser: route('/user')
 };

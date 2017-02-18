@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import '../../sass/navigation/nav.scss';
-
 const NavItem = props => (
   <li><Link to={props.route}>{props.title}</Link></li>
 );

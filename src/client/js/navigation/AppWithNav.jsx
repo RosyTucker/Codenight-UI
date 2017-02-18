@@ -1,19 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchCurrentUser } from '../common/actionCreator';
 import AppRoutes from './AppRoutes';
 import Nav from './Nav';
+import { getCurrentUser } from '../user/userActions';
 
 class AppWithNav extends React.Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.checkLoginStatus();
   }
-
   render() {
-    const isClear = this.props.location.pathname === AppRoutes.home;
+    const { location, isLoggedIn } = this.props;
+    const isClear = location.pathname === AppRoutes.home;
     return (
-      <div className="app-with-nav">
-        <Nav isClear={isClear} isLoggedIn={this.props.isLoggedIn} />
+      <div>
+        <Nav isClear={isClear} isLoggedIn={isLoggedIn} />
         {this.props.children}
       </div>
     );
@@ -22,19 +22,17 @@ class AppWithNav extends React.Component {
 
 AppWithNav.propTypes = {
   children: React.PropTypes.any,
-  location: React.PropTypes.object.isRequired,
-  checkLoginStatus: React.PropTypes.func.isRequired,
-  isLoggedIn: React.PropTypes.bool
+  location: React.PropTypes.object.isRequired
 };
 
-export { AppWithNav };
 
 const mapStateToProps = state => ({
-  isLoggedIn: state.currentUser.isLoggedIn
+  isLoggedIn: !!state.user.id
 });
 
 const mapDispatchToProps = dispatch => ({
-  checkLoginStatus: () => dispatch(fetchCurrentUser())
+  checkLoginStatus: () => dispatch(getCurrentUser())
 });
 
+export { AppWithNav };
 export default connect(mapStateToProps, mapDispatchToProps)(AppWithNav);

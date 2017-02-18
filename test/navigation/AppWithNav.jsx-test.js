@@ -1,7 +1,7 @@
 import { React, expect, Enzyme, sinon } from '../TestHelpers';
-import { AppWithNav } from '../../src/client/js/navigation/AppWithNav';
-import AppRoutes from '../../src/client/js/navigation/AppRoutes';
-import Nav from '../../src/client/js/navigation/Nav';
+import { AppWithNav } from '../../client2/js/navigation/AppWithNav';
+import AppRoutes from '../../client2/js/navigation/AppRoutes';
+import Nav from '../../client2/js/navigation/Nav';
 
 describe('AppWithNav.jsx', () => {
   let appWithNav;
@@ -13,7 +13,7 @@ describe('AppWithNav.jsx', () => {
     location = { pathname: '/someRoute' };
     appWithNav = Enzyme.shallow(
       <AppWithNav location={location} checkLoginStatus={checkLoginStatus} isLoggedIn>
-        <div className="someChild"></div>
+        <div className="someChild" />
       </AppWithNav>
     );
   });
@@ -31,7 +31,7 @@ describe('AppWithNav.jsx', () => {
     expect(nav.type()).to.equal(Nav);
     expect(nav.props().isLoggedIn).to.equal(true);
 
-    expect(appWithNav.contains(<div className="someChild"></div>)).to.equal(true);
+    expect(appWithNav.contains(<div className="someChild" />)).to.equal(true);
   });
 
   it('should pass isClear to Nav if location is home', () => {

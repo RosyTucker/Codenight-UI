@@ -17,7 +17,7 @@ const PromiseHelper = {
     }
 
     new Promise((resolve, reject) => {
-      promiseObj.then(result => {
+      promiseObj.then((result) => {
         try {
           expectationsFunction(result);
           resolve();

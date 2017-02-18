@@ -1,9 +1,9 @@
 import { React, expect, Enzyme, sinon } from '../TestHelpers';
-import { LoggedInApp } from '../../src/client/js/navigation/LoggedInApp';
-import AppRoutes from '../../src/client/js/navigation/AppRoutes';
+import { LoggedInApp } from '../../client2/js/navigation/LoggedInApp';
+import AppRoutes from '../../client2/js/navigation/AppRoutes';
 
 describe('LoggedInApp.jsx', () => {
-  const children = <div className="some-logged-in-thing"></div>;
+  const children = <div className="some-logged-in-thing" />;
   let loggedInApp;
   let context;
 

@@ -1,24 +1,25 @@
 import React from 'react';
-import Strings from '../common/Strings';
 import { connect } from 'react-redux';
-import { login } from '../common/actionCreator';
+import Radium from 'radium';
+
+import Strings from '../common/Strings';
+import { requestLogin } from '../user/userActions';
 import Banner from './Banner';
 import FeaturedContent from './FeaturedContent';
 import LoginButton from './LoginButton';
 
-import '../../sass/home/home.scss';
-import bannerImg from '../../images/homeBanner.jpg';
+import bannerImg from '../../../client/images/homeBanner.jpg';
 
 const Home = ({ onLoginClicked }) => {
   const { bannerTitle, bannerSubtitle, featuredContent } = Strings.home;
   return (
-    <div className="home">
+    <div>
       <Banner imgSrc={bannerImg} title={bannerTitle} subtitle={bannerSubtitle} />
       <FeaturedContent {...featuredContent} />
-      <div className="mission-statement">
+      <div>
         <p>{Strings.home.missionStatement}</p>
       </div>
-      <div className="login-container">
+      <div>
         <LoginButton onClick={onLoginClicked} />
       </div>
     </div>
@@ -32,9 +33,9 @@ Home.propTypes = {
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
-  onLoginClicked: () => dispatch(login())
+  onLoginClicked: () => dispatch(requestLogin())
 });
 
 export { Home };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Radium(Home));

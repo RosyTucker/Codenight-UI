@@ -1,4 +1,4 @@
-import { React, expect, Sandbox, ComponentHelpers, Enzyme, sinon } from '../TestHelpers';
+import { React, expect, Sandbox, Enzyme, sinon } from '../TestHelpers';
 import { Home } from '../../src/client/js/home/Home';
 import Banner from '../../src/client/js/home/Banner';
 import LoginButton from '../../src/client/js/home/LoginButton';
@@ -13,7 +13,6 @@ describe('Home.jsx', () => {
   const sandbox = new Sandbox();
 
   beforeEach(() => {
-    ComponentHelpers.stub(sandbox, Banner);
     sandbox.stub(bannerImg);
     onLoginClicked = sinon.spy();
 

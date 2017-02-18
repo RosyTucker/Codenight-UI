@@ -24,15 +24,5 @@ export default {
       'banh mi hella. Paleo bitters dreamcatcher, cronut normcore art party beard ' +
       '1 squid semiotics chicharrones intelligentsia.'
     }
-  },
-  profile: {
-    profileTitle: 'Your Profile',
-    editUserInfo: 'Edit',
-    saveUserInfo: 'Save'
-  },
-  workshops: {
-    title: 'Workshops',
-    attendedTitle: 'Attended',
-    upcomingTitle: 'Upcoming'
   }
 };

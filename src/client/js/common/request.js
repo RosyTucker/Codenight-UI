@@ -1,14 +1,25 @@
+function getCookie(name) {
+  // eslint-disable-next-line no-undef
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  return parts.length === 2 ? parts.pop().split(';').shift() : '';
+}
+
 const request = (method, endpoint, params = {}, customHeaders) => {
-  const headers = Object.assign({}, { accept: 'application/json' }, customHeaders);
+  const headers = {
+    Authorization: `bearer ${getCookie('Auth')}`,
+    Accept: 'application/json',
+    ...customHeaders
+  };
 
   let response;
 
-  return fetch(endpoint, { method, headers, credentials: 'same-origin' })
-    .then(res => {
+  return fetch(endpoint, { method, headers })
+    .then((res) => {
       response = res;
       return res.json();
     })
-    .then(body => {
+    .then((body) => {
       const content = ({ status: response.status, body });
       if (content.status === 200) {
         return content;
