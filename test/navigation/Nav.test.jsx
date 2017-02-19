@@ -1,8 +1,8 @@
 import { React, expect, Enzyme, Sandbox } from '../TestHelpers';
-import Nav from '../../src/client/js/navigation/Nav';
-import NavItem from '../../src/client/js/navigation/NavItem';
+import { Nav } from '../../src/client/js/navigation/Nav';
+import { NavItem } from '../../src/client/js/navigation/NavItem';
 import Strings from '../../src/client/js/common/strings';
-import AppRoutes from '../../src/client/js/navigation/AppRoutes';
+import appRoutes from '../../src/client/js/navigation/appRoutes';
 
 describe('Nav.jsx', () => {
   const sandbox = new Sandbox();
@@ -40,7 +40,7 @@ describe('Nav.jsx', () => {
     const homeItem = list.childAt(0);
     expect(homeItem.type()).to.equal(NavItem);
     expect(homeItem.props().title).to.equal(Strings.nav.home);
-    expect(homeItem.props().route).to.equal(AppRoutes.home);
+    expect(homeItem.props().route).to.equal(appRoutes.home);
   });
 
   it('should contain a problems nav item as item 1', () => {
@@ -49,7 +49,7 @@ describe('Nav.jsx', () => {
     const homeItem = list.childAt(1);
     expect(homeItem.type()).to.equal(NavItem);
     expect(homeItem.props().title).to.equal(Strings.nav.problems);
-    expect(homeItem.props().route).to.equal(AppRoutes.problems);
+    expect(homeItem.props().route).to.equal(appRoutes.problems);
   });
 
   it('should not contain any logged in items if not logged in ', () => {
@@ -66,7 +66,7 @@ describe('Nav.jsx', () => {
     const homeItem = list.childAt(2);
     expect(homeItem.type()).to.equal(NavItem);
     expect(homeItem.props().title).to.equal(Strings.nav.profile);
-    expect(homeItem.props().route).to.equal(AppRoutes.profile);
+    expect(homeItem.props().route).to.equal(appRoutes.profile);
   });
 
   it('should contain a logout nav item as item 3 if logged in', () => {
@@ -77,6 +77,6 @@ describe('Nav.jsx', () => {
     const homeItem = list.childAt(3);
     expect(homeItem.type()).to.equal(NavItem);
     expect(homeItem.props().title).to.equal(Strings.nav.logout);
-    expect(homeItem.props().route).to.equal(AppRoutes.logout);
+    expect(homeItem.props().route).to.equal(appRoutes.logout);
   });
 });

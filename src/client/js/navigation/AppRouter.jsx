@@ -1,6 +1,6 @@
 import React from 'react';
 import { Router, Route, Redirect } from 'react-router';
-import AppRoutes from './AppRoutes';
+import AppRoutes from './appRoutes';
 import AppWithNav from './AppWithNav';
 import Home from '../home/Home';
 

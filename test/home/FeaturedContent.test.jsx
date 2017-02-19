@@ -1,5 +1,5 @@
 import { React, expect, Enzyme, Sandbox } from '../TestHelpers';
-import FeaturedContent from '../../src/client/js/home/FeaturedContent';
+import { FeaturedContent } from '../../src/client/js/home/FeaturedContent';
 
 import featuredAttendeeImg from '../../src/client/images/attendantAvatar.jpg';
 

@@ -1,5 +1,5 @@
 import { React, expect, Enzyme } from '../TestHelpers';
-import Banner from '../../src/client/js/home/Banner';
+import { Banner } from '../../src/client/js/home/Banner';
 import Strings from '../../src/client/js/common/strings';
 
 describe('Banner.jsx', () => {

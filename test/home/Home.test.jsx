@@ -1,8 +1,8 @@
 import { React, expect, Sandbox, Enzyme, sinon } from '../TestHelpers';
 import { Home } from '../../src/client/js/home/Home';
-import Banner from '../../src/client/js/home/Banner';
-import LoginButton from '../../src/client/js/home/LoginButton';
-import FeaturedContent from '../../src/client/js/home/FeaturedContent';
+import { Banner } from '../../src/client/js/home/Banner';
+import { LoginButton } from '../../src/client/js/home/LoginButton';
+import { FeaturedContent } from '../../src/client/js/home/FeaturedContent';
 import Strings from '../../src/client/js/common/strings';
 
 import bannerImg from '../../src/client/images/homeBanner.jpg';

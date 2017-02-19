@@ -5,7 +5,7 @@ import theme from '../common/theme';
 import NavItem from './NavItem';
 import SignInNavItem from './SignInNavItem';
 import Strings from '../common/strings';
-import AppRoutes from './AppRoutes';
+import AppRoutes from './appRoutes';
 
 const style = {
   nav: {

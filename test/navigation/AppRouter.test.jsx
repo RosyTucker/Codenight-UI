@@ -2,9 +2,9 @@ import { Router, Route } from 'react-router';
 
 import { React, expect, Enzyme, Sandbox } from '../TestHelpers';
 import AppRouter from '../../src/client/js/navigation/AppRouter';
-import AppWithNav from '../../src/client/js/navigation/AppWithNav';
-import Home from '../../src/client/js/home/Home';
-import AppRoutes from '../../src/client/js/navigation/AppRoutes';
+import { AppWithNav } from '../../src/client/js/navigation/AppWithNav';
+import { Home } from '../../src/client/js/home/Home';
+import AppRoutes from '../../src/client/js/navigation/appRoutes';
 
 describe('AppRouter.jsx', () => {
   const sandbox = new Sandbox();
