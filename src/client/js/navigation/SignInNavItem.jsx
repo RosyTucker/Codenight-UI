@@ -13,6 +13,7 @@ const style = {
     padding: '15px 20px',
     margin: '0 2px',
     textDecoration: 'none',
+    outline: 'none',
     textShadow: 0,
     ':hover': {
       background: theme.lightestTextColor,

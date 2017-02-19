@@ -2,12 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Radium from 'radium';
 
-import theme from '../common/theme';
-import strings from '../common/strings';
+// import theme from '../common/theme';
+// import strings from '../common/strings';
 import {} from '../user/userActions';
 
-const style = {
-};
+// const style = {
+// };
 
 const Profile = ({ user }) => (
   <div>
