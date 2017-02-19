@@ -24,7 +24,7 @@ before_deploy:
   - git remote
   - git add -A
   - git status
-  - git commit -m $(git log -1)
+  - git commit -m "$(git log -1)"
 
 deploy:
   provider: heroku
