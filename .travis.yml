@@ -3,8 +3,10 @@ node_js:
   - "6"
 
 before_script:
- - wget -qO- https://toolbelt.heroku.com/install.sh | sh
-
+  - wget https://cli-assets.heroku.com/branches/stable/heroku-linux-amd64.tar.gz -O heroku.tar.gz
+  - mkdir -p /usr/local/lib
+  - tar -xvzf heroku.tar.gz -C /usr/local/lib
+  - /usr/local/lib/heroku/install
 
 script:
   -  npm test && npm run build && npm run deploy
