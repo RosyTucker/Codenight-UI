@@ -11,9 +11,25 @@ before_script:
 script:
   -  npm test && npm run build
 
+before_deploy:
+  - echo "Copying package.json"
+  - cp package.json dist/package.json
+  - echo "Copying Procfile"
+  - cp Procfile.template dist/Procfile
+  - cd dist
+  - git config --global user.email "ci@codenight.com"
+  - git config --global user.name "Travis CI"
+  - git init
+  - git remote add heroku $HEROKU_REPO
+  - git remote
+  - git add -A
+  - git status
+  - git commit -m $(git log -1)
+
 deploy:
   provider: heroku
   api_key: $HEROKU_API_KEY
   skip_cleanup: true
   app: $APP_NAME
-
+  run:
+    -heroku config:set BASE_URL=$BASE_URL --app $APP_NAME &> /dev/null
