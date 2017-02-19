@@ -16,6 +16,7 @@ before_deploy:
   - cp package.json dist/package.json
   - echo "Copying Procfile"
   - cp Procfile.template dist/Procfile
+  - export COMMIT_MESSAGE=$(git log -1 --pretty=%B)
   - cd dist
   - git config --global user.email "ci@codenight.com"
   - git config --global user.name "Travis CI"
@@ -24,7 +25,6 @@ before_deploy:
   - git remote
   - git add -A
   - git status
-  - export COMMIT_MESSAGE=$(git log -1 --pretty=%B)
   - git commit -m "$COMMIT_MESSAGE"
 
 deploy:
