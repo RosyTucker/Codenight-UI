@@ -11,6 +11,10 @@ cp Procfile.template dist/Procfile
 cd dist
 
 echo Creating git repo, with heroku origin $HEROKU_REPO
+
+git config --global user.email "ci@codenight.com"
+git config --global user.name "Travis CI"
+
 git init
 git remote add heroku $HEROKU_REPO
 git remote
@@ -23,7 +27,6 @@ echo "Committing with message: $COMMIT_MESSAGE"
 git commit -m "$COMMIT_MESSAGE"
 
 echo "Setting config vars"
-
 heroku config:set BASE_URL=$BASE_URL --app $APP_NAME &> /dev/null
 echo "Set BASE_URL"
 
