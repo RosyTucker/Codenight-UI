@@ -11,7 +11,7 @@ const style = {
   textContainer: {
     position: 'absolute',
     left: '40%',
-    top: '70%',
+    top: '75%',
     transform: 'translate(-30%, -50%)',
     textTransform: 'uppercase',
     color: theme.lightestTextColor,

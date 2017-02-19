@@ -14,12 +14,15 @@ const style = {
     ...theme.marginResponsive,
     padding: '30px',
     display: 'flex',
-    flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    flexDirection: 'column',
+    '@media only screen and (min-width: 768px)': {
+      flexDirection: 'row'
+    }
   },
   avatarContainer: {
-    textAlign: 'right',
+    textAlign: 'right'
   },
   avatar: {
     width: '120px',

@@ -1,13 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 import AppRoutes from './AppRoutes';
 import Nav from './Nav';
 import { getCurrentUser } from '../user/userActions';
+
 
 class AppWithNav extends React.Component {
   componentDidMount() {
     this.props.checkLoginStatus();
   }
+
   render() {
     const { location, isLoggedIn } = this.props;
     const isClear = location.pathname === AppRoutes.home;

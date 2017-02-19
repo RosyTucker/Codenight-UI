@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Radium from 'radium';
 
+import theme from '../common/theme';
 import Strings from '../common/Strings';
 import { requestLogin } from '../user/userActions';
 import Banner from './Banner';
@@ -10,16 +11,24 @@ import LoginButton from './LoginButton';
 
 import bannerImg from '../../../client/images/homeBanner.jpg';
 
+const style = {
+  loginContainer: {
+    ...theme.marginResponsive,
+    textAlign: 'center'
+  },
+  mission: {
+    color: theme.primaryColor
+  }
+};
+
 const Home = ({ onLoginClicked }) => {
   const { bannerTitle, bannerSubtitle, featuredContent } = Strings.home;
   return (
     <div>
       <Banner imgSrc={bannerImg} title={bannerTitle} subtitle={bannerSubtitle} />
       <FeaturedContent {...featuredContent} />
-      <div>
-        <p>{Strings.home.missionStatement}</p>
-      </div>
-      <div>
+      <div style={style.loginContainer}>
+        <p style={style.mission}>{Strings.home.missionStatement}</p>
         <LoginButton onClick={onLoginClicked} />
       </div>
     </div>

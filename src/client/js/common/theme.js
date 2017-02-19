@@ -1,13 +1,14 @@
 export default {
   primaryColor: '#FA023C',
   primaryColorDark: '#FA023C',
+  backgroundDark: '#666666',
   dividerColor: '#E0E0E0',
   darkTextColor: '#2E2E2E',
   lightestTextColor: '#FFF',
   smallFontSize: '0.85rem',
   mediumFontSize: '1rem',
-  largeFontSize: '1.5rem',
-  titleFontSize: '3rem',
+  largeFontSize: '1.3rem',
+  titleFontSize: '2.5rem',
   h2FontSize: '1.5rem',
   boldFontWeight: '600',
   normalFontWeight: '400',
@@ -15,19 +16,19 @@ export default {
   marginResponsive: {
     margin: 0,
     '@media only screen and (min-width: 480px)': {
-      margin: '0 5%'
+      margin: '0 1%'
     },
 
     '@media only screen and (min-width: 768px)': {
-      margin: '0 10%'
+      margin: '0 5%'
     },
 
     '@media only screen and (min-width: 992px)': {
-      margin: '0 15%'
+      margin: '0 10%'
     },
 
     '@media only screen and (min-width: 1200px)': {
-      margin: '0 20%',
+      margin: '0 15%'
     }
   }
 };
