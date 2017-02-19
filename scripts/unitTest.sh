@@ -1,3 +1,3 @@
 set -e
 
-mocha test --recursive --compilers js:babel-register --require ignore-styles --timeout 5000
+mocha test --recursive --compilers jsx:babel-register,js:babel-register --require ignore-styles --colors --timeout 5000
