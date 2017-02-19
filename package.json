@@ -10,7 +10,8 @@
     "test": "npm run lint && npm run unit",
     "build": "sh scripts/buildProd.sh",
     "deploy": "sh scripts/deployHeroku.sh",
-    "dev": "sh scripts/dev.sh"
+    "dev": "sh scripts/dev.sh",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

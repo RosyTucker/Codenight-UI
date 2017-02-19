@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 
 const app = express();
 app.use(helmet());
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded( { extended: true }));
 
 const isProduction = process.env.NODE_ENV === 'production';
 

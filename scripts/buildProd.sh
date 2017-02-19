@@ -9,6 +9,6 @@ mkdir dist/client
 cp -r src/client/font dist/client
 cp -r src/client/vendorStyles dist/client
 
-babel src/index.js --out-dir dist/index.js
+babel src/index.js --out-file dist/index.js
 
 webpack -p
