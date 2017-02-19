@@ -6,10 +6,9 @@
   "scripts": {
     "setup": "sh scripts/setup.sh",
     "lint": "sh scripts/lint.sh",
-    "client-unit": "sh scripts/clientUnitTest.sh",
-    "unit": "npm run client-unit",
+    "unit": "sh scripts/unitTest.sh",
     "test": "npm run lint && npm run unit",
-    "build": "sh scripts/build.sh",
+    "build": "sh scripts/buildProd.sh",
     "deploy": "sh scripts/deployHeroku.sh",
     "dev": "sh scripts/dev.sh"
   },
