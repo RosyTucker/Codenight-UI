@@ -1,10 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Radium from 'radium';
 
 import AppRoutes from './AppRoutes';
 import Nav from './Nav';
-import { getCurrentUser } from '../user/userActions';
+import { getCurrentUser, requestLogin } from '../user/userActions';
 
+const style = {
+  childContainer: {
+    paddingTop: '2.8rem'
+  }
+};
 
 class AppWithNav extends React.Component {
   componentDidMount() {
@@ -12,12 +18,14 @@ class AppWithNav extends React.Component {
   }
 
   render() {
-    const { location, isLoggedIn } = this.props;
+    const { location, isLoggedIn, onLogin } = this.props;
     const isClear = location.pathname === AppRoutes.home;
     return (
       <div>
-        <Nav isClear={isClear} isLoggedIn={isLoggedIn} />
-        {this.props.children}
+        <Nav isClear={isClear} isLoggedIn={isLoggedIn} onLogin={onLogin}/>
+        <div style={style.childContainer}>
+          {this.props.children}
+        </div>
       </div>
     );
   }
@@ -34,8 +42,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  checkLoginStatus: () => dispatch(getCurrentUser())
+  checkLoginStatus: () => dispatch(getCurrentUser()),
+  onLogin: () => dispatch(requestLogin())
 });
 
 export { AppWithNav };
-export default connect(mapStateToProps, mapDispatchToProps)(AppWithNav);
+export default connect(mapStateToProps, mapDispatchToProps)(Radium(AppWithNav));

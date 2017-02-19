@@ -5,6 +5,7 @@ import theme from '../common/theme';
 import Strings from '../common/Strings';
 
 const style = {
+  cursor: 'pointer',
   margin: '30px 20px',
   backgroundColor: theme.primaryColor,
   border: `thin solid ${theme.primaryColorDark}`,
@@ -16,13 +17,13 @@ const style = {
   textShadow: 0,
   textTransform: 'uppercase',
   ':hover': {
-    backgroundColor: theme.primaryColorDark,
+    backgroundColor: theme.primaryColorDark
   }
 };
 
 const LoginButton = ({ onClick }) => (
   <button style={style} onClick={onClick}>
-    {Strings.signInButton}
+    {Strings.home.signInButton}
   </button>
 );
 

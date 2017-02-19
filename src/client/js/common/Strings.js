@@ -1,16 +1,16 @@
 export default {
-  signInButton: 'Sign in with GitHub',
   nav: {
     login: 'Sign in',
     logout: 'Log out',
     home: 'Home',
+    title: 'Codenight',
     problems: 'Problems',
     profile: 'Your Profile'
   },
   home: {
+    signInButton: 'Sign in with GitHub',
     bannerAlt: 'Banner',
-    bannerTitle: 'Codenight',
-    bannerSubtitle: 'Solve problems together and code, whatever your background',
+    bannerTitle: 'Solve problems together and code, whatever your background',
     missionStatement: 'We aim to do cool things. Skateboard paleo asymmetrical, ' +
     'shoreditch fap williamsburg cardigan selvage taxidermy. Cardigan pitchfork ' +
     'twee 90\'s butcher. Mustache YOLO godard post-ironic stumptown, ' +

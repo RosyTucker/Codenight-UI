@@ -12,8 +12,10 @@ import LoginButton from './LoginButton';
 import bannerImg from '../../../client/images/homeBanner.jpg';
 
 const style = {
+  content: {
+    ...theme.marginResponsive
+  },
   loginContainer: {
-    ...theme.marginResponsive,
     textAlign: 'center'
   },
   mission: {
@@ -22,14 +24,16 @@ const style = {
 };
 
 const Home = ({ onLoginClicked }) => {
-  const { bannerTitle, bannerSubtitle, featuredContent } = Strings.home;
+  const { bannerTitle, featuredContent } = Strings.home;
   return (
     <div>
-      <Banner imgSrc={bannerImg} title={bannerTitle} subtitle={bannerSubtitle} />
-      <FeaturedContent {...featuredContent} />
-      <div style={style.loginContainer}>
-        <p style={style.mission}>{Strings.home.missionStatement}</p>
-        <LoginButton onClick={onLoginClicked} />
+      <Banner imgSrc={bannerImg} subtitle={bannerTitle}/>
+      <div style={style.content}>
+        <FeaturedContent {...featuredContent} />
+        <div style={style.loginContainer}>
+          <p style={style.mission}>{Strings.home.missionStatement}</p>
+          <LoginButton onClick={onLoginClicked}/>
+        </div>
       </div>
     </div>
   );

@@ -7,12 +7,9 @@ import featuredAttendeeImg from '../../../client/images/attendantAvatar.jpg';
 
 const style = {
   container: {
-    margin: '0 20px 30px 20px',
     borderBottom: `thin solid ${theme.dividerColor}`
   },
   attendee: {
-    ...theme.marginResponsive,
-    padding: '30px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',

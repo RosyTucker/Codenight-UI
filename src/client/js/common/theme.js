@@ -14,17 +14,17 @@ export default {
   normalFontWeight: '400',
   lightFontWeight: '100',
   marginResponsive: {
-    margin: 0,
+    margin: '4%',
     '@media only screen and (min-width: 480px)': {
-      margin: '0 1%'
+      margin: '0 7%'
     },
 
     '@media only screen and (min-width: 768px)': {
-      margin: '0 5%'
+      margin: '0 10%'
     },
 
     '@media only screen and (min-width: 992px)': {
-      margin: '0 10%'
+      margin: '0 13%'
     },
 
     '@media only screen and (min-width: 1200px)': {
