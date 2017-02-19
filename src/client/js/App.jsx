@@ -6,7 +6,7 @@ import { StyleRoot } from 'radium';
 
 import configureStore from './common/configureStore';
 import sagaRoot from './common/sagaRoot';
-import Router from './navigation/AppRouter';
+import AppRouter from './navigation/AppRouter';
 import theme from './common/theme';
 
 const store = configureStore();
@@ -26,7 +26,7 @@ const pageStyle = {
 render(
   <Provider store={store}>
     <StyleRoot style={pageStyle}>
-      <Router history={hashHistory} />
+      <AppRouter history={hashHistory} />
     </StyleRoot>
   </Provider>,
     // eslint-disable-next-line no-undef

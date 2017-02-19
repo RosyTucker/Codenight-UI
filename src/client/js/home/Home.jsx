@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Radium from 'radium';
 
 import theme from '../common/theme';
-import Strings from '../common/strings';
+import strings from '../common/strings';
 import { requestLogin } from '../user/userActions';
 import Banner from './Banner';
 import FeaturedContent from './FeaturedContent';
@@ -24,14 +24,14 @@ const style = {
 };
 
 const Home = ({ onLoginClicked }) => {
-  const { bannerTitle, featuredContent } = Strings.home;
+  const { bannerTitle, featuredContent } = strings.home;
   return (
     <div>
       <Banner imgSrc={bannerImg} subtitle={bannerTitle} />
       <div style={style.content}>
         <FeaturedContent {...featuredContent} />
         <div style={style.loginContainer}>
-          <p style={style.mission}>{Strings.home.missionStatement}</p>
+          <p style={style.mission}>{strings.home.missionStatement}</p>
           <LoginButton onClick={onLoginClicked} />
         </div>
       </div>

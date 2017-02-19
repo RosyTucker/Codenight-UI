@@ -1,21 +1,20 @@
 import { Router, Route } from 'react-router';
 
-import { React, expect, Enzyme, Sandbox } from '../TestHelpers';
+import { React, expect, Enzyme, Sandbox, sinon } from '../TestHelpers';
 import AppRouter from '../../src/client/js/navigation/AppRouter';
-import { AppWithNav } from '../../src/client/js/navigation/AppWithNav';
-import { Home } from '../../src/client/js/home/Home';
+import AppWithNav from '../../src/client/js/navigation/AppWithNav';
+import Home from '../../src/client/js/home/Home';
+import Profile from '../../src/client/js/profile/Profile';
 import AppRoutes from '../../src/client/js/navigation/appRoutes';
 
-describe('AppRouter.jsx', () => {
+describe.only('AppRouter.jsx', () => {
   const sandbox = new Sandbox();
   let appRouter;
   let history;
 
   beforeEach(() => {
-    history = { someHistoryStuff: {} };
-    appRouter = Enzyme.shallow(
-      <AppRouter history={history} />
-    );
+    history = { goBack: sinon.spy(), goForward: sinon.spy() };
+    appRouter = Enzyme.shallow(<AppRouter history={history} />);
   });
 
   afterEach(() => {
@@ -43,6 +42,12 @@ describe('AppRouter.jsx', () => {
       const homeRoute = outerRoute.childAt(0);
       expect(homeRoute.props().path).to.equal(AppRoutes.home);
       expect(homeRoute.props().component).to.equal(Home);
+    });
+
+    it('should contain a profile route', () => {
+      const profileRoute = outerRoute.childAt(1);
+      expect(profileRoute.props().path).to.equal(AppRoutes.profile);
+      expect(profileRoute.props().component).to.equal(Profile);
     });
 
     it('should redirect to home for unknown route as the last option', () => {
