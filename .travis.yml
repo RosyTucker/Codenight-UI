@@ -9,5 +9,10 @@ before_script:
   - heroku --version
 
 script:
-  -  npm test && npm run build && npm run deploy
+  -  npm test && npm run build
+
+deploy:
+  provider: heroku
+  api_key: $HEROKU_API_KEY
+  skip_cleanup: true
 
