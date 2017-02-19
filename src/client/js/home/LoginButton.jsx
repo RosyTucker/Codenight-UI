@@ -2,7 +2,7 @@ import React from 'react';
 import Radium from 'radium';
 
 import theme from '../common/theme';
-import Strings from '../common/Strings';
+import Strings from '../common/strings';
 
 const style = {
   cursor: 'pointer',

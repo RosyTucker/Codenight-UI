@@ -11,7 +11,6 @@ const isProduction = process.env.NODE_ENV === 'production';
 app.use(express.static(`${__dirname}/client`));
 
 app.post('/', (req, res) => {
-  console.log('request', req.body);
   res.cookie('Auth', req.body.jwtToken, { secure: isProduction });
   return res.redirect('/');
 });

@@ -14,7 +14,10 @@ const AppRouter = ({ history }) => (
 );
 
 AppRouter.propTypes = {
-  history: React.PropTypes.object.isRequired
+  history: React.PropTypes.shapeOf({
+    goBack: React.PropTypes.func.isRequired,
+    goForward: React.PropTypes.func.isRequired
+  }).isRequired
 };
 
 export default AppRouter;

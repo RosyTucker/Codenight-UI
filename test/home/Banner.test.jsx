@@ -1,6 +1,6 @@
 import { React, expect, Enzyme } from '../TestHelpers';
-import Banner from '../../client2/js/home/Banner';
-import Strings from '../../client2/js/common/Strings';
+import Banner from '../../src/client/js/home/Banner';
+import Strings from '../../src/client/js/common/strings';
 
 describe('Banner.jsx', () => {
   const title = 'A title';

@@ -1,7 +1,7 @@
 import React from 'react';
 import Radium from 'radium';
 import theme from '../common/theme';
-import Strings from '../common/Strings';
+import Strings from '../common/strings';
 
 const style = {
   container: {
@@ -26,7 +26,7 @@ const style = {
 
 const Banner = ({ imgSrc, subtitle }) => (
   <div style={style.container}>
-    <img style={style.image} alt={Strings.home.bannerAlt} src={imgSrc}/>
+    <img style={style.image} alt={Strings.home.bannerAlt} src={imgSrc} />
     <h2 style={style.subtitle}>{subtitle}</h2>
   </div>
 );

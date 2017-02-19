@@ -19,6 +19,7 @@
     ],
     "react/jsx-no-bind": [
       "warn"
-    ]
+    ],
+    "import/no-named-as-default": 0
   }
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Radium from 'radium';
 
-import AppRoutes from './AppRoutes';
 import Nav from './Nav';
 import { getCurrentUser, requestLogin } from '../user/userActions';
 
@@ -18,11 +17,10 @@ class AppWithNav extends React.Component {
   }
 
   render() {
-    const { location, isLoggedIn, onLogin } = this.props;
-    const isClear = location.pathname === AppRoutes.home;
+    const { isLoggedIn, onLogin } = this.props;
     return (
       <div>
-        <Nav isClear={isClear} isLoggedIn={isLoggedIn} onLogin={onLogin}/>
+        <Nav isLoggedIn={isLoggedIn} onLogin={onLogin} />
         <div style={style.childContainer}>
           {this.props.children}
         </div>
@@ -32,10 +30,11 @@ class AppWithNav extends React.Component {
 }
 
 AppWithNav.propTypes = {
-  children: React.PropTypes.any,
-  location: React.PropTypes.object.isRequired
+  children: React.PropTypes.node.isRequired,
+  checkLoginStatus: React.PropTypes.func.isRequired,
+  onLogin: React.PropTypes.func.isRequired,
+  isLoggedIn: React.PropTypes.bool.isRequired
 };
-
 
 const mapStateToProps = state => ({
   isLoggedIn: !!state.user.id

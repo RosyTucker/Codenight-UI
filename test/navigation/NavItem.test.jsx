@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
 
 import { React, expect, Enzyme, Sandbox } from '../TestHelpers';
-import NavItem from '../../client2/js/navigation/NavItem';
+import NavItem from '../../src/client/js/navigation/NavItem';
 
 describe('NavItem.jsx', () => {
   const sandbox = new Sandbox();

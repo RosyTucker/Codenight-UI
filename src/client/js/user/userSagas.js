@@ -1,7 +1,7 @@
 import { call, put, takeEvery, select } from 'redux-saga/effects';
 
 import { GET_CURRENT_USER, receivedUser, failedToReceiveUser } from './userActions';
-import userService from './UserService';
+import userService from './userService';
 
 function* fetchUser() {
   try {

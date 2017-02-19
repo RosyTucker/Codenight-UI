@@ -1,7 +1,7 @@
 import { React, expect, Enzyme, sinon } from '../TestHelpers';
-import { AppWithNav } from '../../client2/js/navigation/AppWithNav';
-import AppRoutes from '../../client2/js/navigation/AppRoutes';
-import Nav from '../../client2/js/navigation/Nav';
+import { AppWithNav } from '../../src/client/js/navigation/AppWithNav';
+import AppRoutes from '../../src/client/js/navigation/AppRoutes';
+import Nav from '../../src/client/js/navigation/Nav';
 
 describe('AppWithNav.jsx', () => {
   let appWithNav;

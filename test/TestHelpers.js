@@ -2,7 +2,6 @@ import chai from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import * as Enzyme from 'enzyme';
-import 'sinon-as-promised';
 
 chai.use(sinonChai);
 const { expect } = chai;

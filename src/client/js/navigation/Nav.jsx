@@ -4,7 +4,7 @@ import Radium from 'radium';
 import theme from '../common/theme';
 import NavItem from './NavItem';
 import SignInNavItem from './SignInNavItem';
-import Strings from '../common/Strings';
+import Strings from '../common/strings';
 import AppRoutes from './AppRoutes';
 
 const style = {
@@ -42,8 +42,8 @@ const style = {
 };
 
 const loggedInItems = [
-  <NavItem title={Strings.nav.profile} key={AppRoutes.profile} route={AppRoutes.profile}/>,
-  <NavItem title={Strings.nav.logout} key={AppRoutes.logout} route={AppRoutes.logout}/>
+  <NavItem title={Strings.nav.profile} key={AppRoutes.profile} route={AppRoutes.profile} />,
+  <NavItem title={Strings.nav.logout} key={AppRoutes.logout} route={AppRoutes.logout} />
 ];
 
 const Nav = props => (
@@ -68,6 +68,6 @@ Nav.defaultProps = {
   isLoggedIn: false
 };
 
-export { Nav }
+export { Nav };
 export default Radium(Nav);
 

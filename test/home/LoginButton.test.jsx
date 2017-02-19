@@ -1,6 +1,6 @@
 import { React, expect, Enzyme, sinon } from '../TestHelpers';
-import LoginButton from '../../client2/js/home/LoginButton';
-import Strings from '../../client2/js/common/Strings';
+import LoginButton from '../../src/client/js/home/LoginButton';
+import Strings from '../../src/client/js/common/strings';
 
 describe('LoginButton.jsx', () => {
   let loginButton;

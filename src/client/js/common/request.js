@@ -1,3 +1,5 @@
+import 'whatwg-fetch';
+
 function getCookie(name) {
   // eslint-disable-next-line no-undef
   const value = `; ${document.cookie}`;
@@ -14,6 +16,7 @@ const request = (method, endpoint, params = {}, customHeaders) => {
 
   let response;
 
+  // eslint-disable-next-line no-undef
   return fetch(endpoint, { method, headers })
     .then((res) => {
       response = res;
