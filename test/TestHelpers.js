@@ -10,6 +10,9 @@ const { expect } = chai;
 
 jsdomify.create('<!DOCTYPE html><html><head></head><body><div id="app"></div></body></html>');
 
+// eslint-disable-next-line no-undef
+window.reactSettings = encodeURIComponent(JSON.stringify({}));
+
 const React = require('react');
 const ReactDOM = require('react-dom');
 

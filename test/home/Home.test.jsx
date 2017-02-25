@@ -1,4 +1,4 @@
-import { React, expect, Sandbox, Enzyme, sinon } from '../TestHelpers';
+import { React, expect, Enzyme, sinon } from '../TestHelpers';
 import { Home } from '../../src/client/js/home/Home';
 import Banner from '../../src/client/js/home/Banner';
 import LoginButton from '../../src/client/js/home/LoginButton';
@@ -10,10 +10,8 @@ import bannerImg from '../../src/client/images/homeBanner.jpg';
 describe('<Home />', () => {
   let home;
   let onLoginClicked;
-  const sandbox = new Sandbox();
 
   beforeEach(() => {
-    sandbox.stub(bannerImg);
     onLoginClicked = sinon.spy();
 
     home = Enzyme.shallow(<Home onLoginClicked={onLoginClicked} />);

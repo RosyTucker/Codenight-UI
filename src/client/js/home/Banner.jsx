@@ -32,7 +32,10 @@ const Banner = ({ imgSrc }) => (
 );
 
 Banner.propTypes = {
-  imgSrc: PropTypes.shape({}).isRequired
+  imgSrc: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.shape({ }).isRequired
+  ]).isRequired
 };
 
 export default Radium(Banner);

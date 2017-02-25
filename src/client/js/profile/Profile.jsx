@@ -3,13 +3,12 @@ import { connect } from 'react-redux';
 import Radium from 'radium';
 
 import theme from '../common/theme';
-// import strings from '../common/strings';
-import {} from '../user/userActions';
 
 const style = {
   container: {
-    ...theme.marginResponsive,
-    display: 'flex'
+    paddingTop: '3rem',
+    display: 'flex',
+    ...theme.marginResponsive
   },
   profileImage: {
     ...theme.circleImage

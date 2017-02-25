@@ -4,12 +4,13 @@ import { Provider } from 'react-redux';
 import { hashHistory } from 'react-router';
 import { StyleRoot } from 'radium';
 
-import configureStore from './common/configureStore';
-import sagaRoot from './common/sagaRoot';
+import configureStore from './config/configureStore';
+import sagaRoot from './config/sagaRoot';
 import AppRouter from './navigation/AppRouter';
 import theme from './common/theme';
 
-const store = configureStore();
+// eslint-disable-next-line no-undef
+const store = configureStore({ config: JSON.parse(decodeURIComponent(window.reactSettings)) });
 store.runSaga(sagaRoot);
 
 const pageStyle = {

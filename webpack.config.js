@@ -33,12 +33,6 @@ const imageLoader = {
   include: PATHS.images
 };
 
-const htmlPlugin = new HtmlWebpackPlugin({
-  title: 'CodeNight',
-  filename: 'index.html',
-  template: PATHS.htmlTemplate
-});
-
 module.exports = [
   {
     devtool: 'source-map',
@@ -53,7 +47,6 @@ module.exports = [
     resolve: {
       extensions: ['.js', '.jsx']
     },
-    plugins: [htmlPlugin],
     module: {
       loaders: [babelLoader, fontLoader, imageLoader]
     }

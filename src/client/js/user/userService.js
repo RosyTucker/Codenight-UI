@@ -1,8 +1,7 @@
 import Request from '../common/request';
-import Routes from '../common/routes';
+import Routes from '../config/configSelectors';
 
-const getCurrentUser = () => Request.get(Routes.currentUser)
-  .then(response => response.body);
+const getCurrentUser = route => Request.get(route).then(response => response.body);
 
 const logout = () => Request.get(Routes.logout);
 

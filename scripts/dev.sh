@@ -15,5 +15,6 @@ mkdir dist
 mkdir dist/client
 
 cp -r $(pwd)/src/client/font $(pwd)/dist/client
+cp -r $(pwd)/src/client/templates $(pwd)/dist/client
 cp -r $(pwd)/src/client/vendorStyles $(pwd)/dist/client
 webpack -w & $(pwd)/scripts/devServer.sh
