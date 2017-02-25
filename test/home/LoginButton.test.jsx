@@ -1,8 +1,8 @@
 import { React, expect, Enzyme, sinon } from '../TestHelpers';
-import { LoginButton } from '../../src/client/js/home/LoginButton';
-import Strings from '../../src/client/js/common/strings';
+import LoginButton from '../../src/client/js/home/LoginButton';
+import strings from '../../src/client/js/common/strings';
 
-describe('LoginButton.jsx', () => {
+describe('<LoginButton />', () => {
   let loginButton;
   let onClick;
 
@@ -12,9 +12,7 @@ describe('LoginButton.jsx', () => {
   });
 
   it('should be a button', () => {
-    expect(loginButton.type()).to.equal('button');
-    expect(loginButton.hasClass('login-button')).to.equal(true);
     expect(loginButton.props().onClick).to.equal(onClick);
-    expect(loginButton.text()).to.equal(Strings.signInButton);
+    expect(loginButton.text()).to.equal(strings.home.signInButton);
   });
 });

@@ -25,11 +25,17 @@ const style = {
 
 const Home = ({ onLoginClicked }) => {
   const { bannerTitle, featuredContent } = strings.home;
+  const featuredContentUser = {
+    name: featuredContent.name,
+    description: featuredContent.description,
+    avatarUrl: featuredContent.avatarUrl
+  };
+
   return (
     <div>
       <Banner imgSrc={bannerImg} subtitle={bannerTitle} />
       <div style={style.content}>
-        <FeaturedContent {...featuredContent} />
+        <FeaturedContent user={featuredContentUser} />
         <div style={style.loginContainer}>
           <p style={style.mission}>{strings.home.missionStatement}</p>
           <LoginButton onClick={onLoginClicked} />

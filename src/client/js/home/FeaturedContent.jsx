@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Radium from 'radium';
 import FontAwesome from 'react-fontawesome';
 
 import theme from '../common/theme';
-import featuredAttendeeImg from '../../../client/images/attendantAvatar.jpg';
 
 const style = {
   container: {
@@ -22,10 +21,7 @@ const style = {
     textAlign: 'right'
   },
   avatar: {
-    width: '120px',
-    height: '120px',
-    borderRadius: '50%',
-    border: `thin solid ${theme.primaryColor}`
+    ...theme.circleImage
   },
   openQuote: {
     marginRight: '5px'
@@ -43,17 +39,17 @@ const style = {
   }
 };
 
-const FeaturedContent = ({ name, description }) => (
+const FeaturedContent = ({ user }) => (
   <div style={style.container}>
     <div style={style.attendee}>
       <div style={style.avatarContainer}>
-        <img style={style.avatar} alt={name} src={featuredAttendeeImg} />
+        <img style={style.avatar} alt={user.name} src={user.avatarUrl} />
       </div>
       <blockquote style={style.quote}>
         <FontAwesome style={style.openQuote} name="quote-left" />
-        {description}
+        {user.description}
         <FontAwesome style={style.closeQuote} name="quote-right" />
-        <cite style={style.cite}>{name}</cite>
+        <cite style={style.cite}>{user.name}</cite>
       </blockquote>
     </div>
   </div>
@@ -61,10 +57,11 @@ const FeaturedContent = ({ name, description }) => (
 
 
 FeaturedContent.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  description: React.PropTypes.string.isRequired
+  user: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    avatarUrl: PropTypes.string.isRequired
+  }).isRequired
 };
-
-export { FeaturedContent };
 
 export default Radium(FeaturedContent);

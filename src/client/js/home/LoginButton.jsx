@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Radium from 'radium';
 
 import theme from '../common/theme';
-import Strings from '../common/strings';
+import strings from '../common/strings';
 
 const style = {
   cursor: 'pointer',
@@ -23,14 +23,12 @@ const style = {
 
 const LoginButton = ({ onClick }) => (
   <button style={style} onClick={onClick}>
-    {Strings.home.signInButton}
+    {strings.home.signInButton}
   </button>
 );
 
 LoginButton.propTypes = {
-  onClick: React.PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired
 };
-
-export { LoginButton };
 
 export default Radium(LoginButton);

@@ -35,5 +35,4 @@ SignInNavItem.defaultProps = {
   title: ''
 };
 
-export { SignInNavItem };
 export default Radium(SignInNavItem);

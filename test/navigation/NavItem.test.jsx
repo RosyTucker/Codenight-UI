@@ -1,7 +1,5 @@
-import { Link } from 'react-router';
-
 import { React, expect, Enzyme, Sandbox } from '../TestHelpers';
-import { NavItem } from '../../src/client/js/navigation/NavItem';
+import NavItem from '../../src/client/js/navigation/NavItem';
 
 describe('NavItem.jsx', () => {
   const sandbox = new Sandbox();
@@ -20,10 +18,9 @@ describe('NavItem.jsx', () => {
   it('should be list item with a link', () => {
     expect(navItem.type()).to.equal('li');
 
-    const link = navItem.find(Link);
-    expect(link).to.have.length(1);
+    const link = navItem.childAt(0);
 
     expect(link.props().to).to.equal(route);
-    expect(link.childAt(0).text()).to.equal(title);
+    expect(link.children().text()).to.equal(title);
   });
 });

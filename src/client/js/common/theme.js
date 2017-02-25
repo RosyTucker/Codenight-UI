@@ -1,5 +1,7 @@
+const primaryColor = '#FA023C';
+
 export default {
-  primaryColor: '#FA023C',
+  primaryColor,
   primaryColorDark: '#FA023C',
   backgroundDark: '#666666',
   dividerColor: '#E0E0E0',
@@ -13,6 +15,18 @@ export default {
   boldFontWeight: '600',
   normalFontWeight: '400',
   lightFontWeight: '100',
+  circleImage: {
+    width: '100px',
+    height: '100px',
+    objectFit: 'cover',
+    overflow: 'hidden',
+    border: `thin solid ${primaryColor}`,
+    borderRadius: '50%',
+    '@media only screen and (max-width: 768px)': {
+      width: '75px',
+      height: '75px'
+    }
+  },
   marginResponsive: {
     margin: '4%',
     '@media only screen and (min-width: 480px)': {

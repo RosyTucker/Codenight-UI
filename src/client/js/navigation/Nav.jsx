@@ -68,6 +68,5 @@ Nav.defaultProps = {
   isLoggedIn: false
 };
 
-export { Nav };
 export default Radium(Nav);
 

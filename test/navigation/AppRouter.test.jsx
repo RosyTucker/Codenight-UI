@@ -7,7 +7,7 @@ import Home from '../../src/client/js/home/Home';
 import Profile from '../../src/client/js/profile/Profile';
 import AppRoutes from '../../src/client/js/navigation/appRoutes';
 
-describe.only('AppRouter.jsx', () => {
+describe('AppRouter.jsx', () => {
   const sandbox = new Sandbox();
   let appRouter;
   let history;

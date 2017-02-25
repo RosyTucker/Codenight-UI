@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Radium from 'radium';
 import theme from '../common/theme';
-import Strings from '../common/strings';
+import strings from '../common/strings';
 
 const style = {
   container: {
@@ -15,7 +15,7 @@ const style = {
       height: '0'
     }
   },
-  subtitle: {
+  message: {
     textTransform: 'uppercase',
     color: theme.darkTextColor,
     margin: '1.5rem 0 0.5rem 0',
@@ -24,19 +24,15 @@ const style = {
   }
 };
 
-const Banner = ({ imgSrc, subtitle }) => (
+const Banner = ({ imgSrc }) => (
   <div style={style.container}>
-    <img style={style.image} alt={Strings.home.bannerAlt} src={imgSrc} />
-    <h2 style={style.subtitle}>{subtitle}</h2>
+    <img style={style.image} alt={strings.home.bannerAltText} src={imgSrc} />
+    <h2 style={style.message}>{strings.home.bannerMessage}</h2>
   </div>
 );
 
 Banner.propTypes = {
-  imgSrc: React.PropTypes.string.isRequired,
-  subtitle: React.PropTypes.string.isRequired
+  imgSrc: PropTypes.shape({}).isRequired
 };
 
-export { Banner };
-
-const radiumBanner = Radium(Banner);
-export default radiumBanner;
+export default Radium(Banner);

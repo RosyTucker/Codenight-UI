@@ -23,8 +23,8 @@ const babelLoader = {
 };
 
 const fontLoader = {
-    test: /\.(eot|svg|ttf|woff|woff2)$/,
-    loader: 'file?name=public/fonts/[name].[ext]'
+  test: /\.(eot|svg|ttf|woff|woff2)$/,
+  loader: 'file?name=public/fonts/[name].[ext]'
 };
 
 const imageLoader = {
@@ -41,6 +41,7 @@ const htmlPlugin = new HtmlWebpackPlugin({
 
 module.exports = [
   {
+    devtool: 'source-map',
     entry: [
       'babel-polyfill',
       PATHS.jsEntry

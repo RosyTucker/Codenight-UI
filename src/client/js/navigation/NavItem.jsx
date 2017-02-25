@@ -33,5 +33,4 @@ NavItem.defaultProps = {
   title: ''
 };
 
-export { NavItem };
 export default Radium(NavItem);

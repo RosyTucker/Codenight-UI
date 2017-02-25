@@ -12,7 +12,6 @@ import theme from './common/theme';
 const store = configureStore();
 store.runSaga(sagaRoot);
 
-
 const pageStyle = {
   fontFamily: 'Raleway, Open Sans, Helvetica Neue, Helvetica, Arial, sans-serif',
   color: theme.darkTextColor,
@@ -23,11 +22,16 @@ const pageStyle = {
   textDecoration: 'none',
   border: 0
 };
-render(
+
+const App = () => (
   <Provider store={store}>
     <StyleRoot style={pageStyle}>
       <AppRouter history={hashHistory} />
     </StyleRoot>
-  </Provider>,
-    // eslint-disable-next-line no-undef
-    document.getElementById('app'));
+  </Provider>
+);
+
+// eslint-disable-next-line no-undef
+render(<App />, document.getElementById('app'));
+
+export default App;
