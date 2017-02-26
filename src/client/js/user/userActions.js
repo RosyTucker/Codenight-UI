@@ -1,7 +1,7 @@
 export const REQUEST_LOGIN = 'REQUEST_LOGIN';
 export const GET_CURRENT_USER = 'GET_CURRENT_USER';
 export const RECEIVED_USER = 'RECEIVED_USER';
-export const FAILED_TO_RECEIVE_USER = 'FAILED_TO_RECEIVE_USER';
+export const SET_LOADING = 'SET_LOADING';
 
 export function requestLogin() {
   return {
@@ -16,9 +16,10 @@ export function receivedUser(user) {
   };
 }
 
-export function failedToReceiveUser() {
+export function setLoading(isLoading) {
   return {
-    type: FAILED_TO_RECEIVE_USER
+    type: SET_LOADING,
+    isLoading
   };
 }
 

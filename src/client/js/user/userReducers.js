@@ -1,13 +1,21 @@
-import { REQUEST_LOGIN, RECEIVED_USER, FAILED_TO_RECEIVE_USER } from './userActions';
+import { REQUEST_LOGIN, RECEIVED_USER, SET_LOADING } from './userActions';
 
-const user = (state = {}, action) => {
+export const getIsLoggedIn = state => !!state.user.id;
+export const getIsLoading = state => state.user.isLoading;
+
+const initialUser = {
+  isLoading: true
+};
+
+const user = (state = initialUser, action) => {
   switch (action.type) {
     case REQUEST_LOGIN:
-      return { ...state, isLoggingIn: true };
+      return { ...state };
     case RECEIVED_USER:
-      return { ...state, ...action.user, isLoggingIn: false };
-    case FAILED_TO_RECEIVE_USER:
-      return { isLoggingIn: false };
+      return { ...state, ...action.user };
+    case SET_LOADING: {
+      return { ...state, isLoading: action.isLoading };
+    }
     default:
       return state;
   }

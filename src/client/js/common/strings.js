@@ -5,7 +5,8 @@ export default {
     home: 'Home',
     title: 'Codenight',
     problems: 'Problems',
-    profile: 'Your Profile'
+    profile: 'Your Profile',
+    loading: 'hang tight ...'
   },
   home: {
     signInButton: 'Sign in with GitHub',
