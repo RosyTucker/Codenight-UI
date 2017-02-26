@@ -1,17 +1,10 @@
-export const REQUEST_LOGIN = 'REQUEST_LOGIN';
 export const GET_CURRENT_USER = 'GET_CURRENT_USER';
-export const RECEIVED_USER = 'RECEIVED_USER';
+export const RECEIVE_USER = 'RECEIVED_USER';
 export const SET_LOADING = 'SET_LOADING';
 
-export function requestLogin() {
+export function receiveUser(user) {
   return {
-    type: REQUEST_LOGIN
-  };
-}
-
-export function receivedUser(user) {
-  return {
-    type: RECEIVED_USER,
+    type: RECEIVE_USER,
     user
   };
 }

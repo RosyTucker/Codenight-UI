@@ -1,6 +1,6 @@
 import { call, put, takeEvery, select } from 'redux-saga/effects';
 
-import { GET_CURRENT_USER, REQUEST_LOGIN, receivedUser, setLoading } from './userActions';
+import { GET_CURRENT_USER, REQUEST_LOGIN, receiveUser, setLoading } from './userActions';
 import { getRoutes } from '../config/configSelectors';
 import userService from './userService';
 
@@ -9,7 +9,7 @@ function* fetchUser() {
   const routes = yield select(getRoutes);
   const user = yield call(userService.getCurrentUser, routes.currentUser);
 
-  yield put(receivedUser(user));
+  yield put(receiveUser(user));
   yield put(setLoading(false));
 }
 
