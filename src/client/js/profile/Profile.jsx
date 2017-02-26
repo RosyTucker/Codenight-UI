@@ -7,14 +7,13 @@ import theme from '../common/theme';
 const style = {
   container: {
     paddingTop: '3rem',
-    display: 'flex',
     ...theme.marginResponsive
   },
   profileImage: {
-    ...theme.circleImage
+    ...theme.circleImage(140)
   },
   profileImageWrapper: {
-    marginRight: '1rem'
+    textAlign: 'center'
   }
 };
 

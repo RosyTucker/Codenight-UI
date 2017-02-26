@@ -21,7 +21,7 @@ const style = {
     textAlign: 'right'
   },
   avatar: {
-    ...theme.circleImage
+    ...theme.circleImage(120)
   },
   openQuote: {
     marginRight: '5px'
