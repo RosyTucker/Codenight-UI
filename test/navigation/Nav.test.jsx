@@ -7,28 +7,26 @@ import SignInNavItem from '../../src/client/js/navigation/SignInNavItem';
 
 describe('<Nav />', () => {
   let nav;
+  let navItemsList;
   let defaultProps;
 
   beforeEach(() => {
     defaultProps = {
       onLogin: sinon.spy()
     };
-    nav = Enzyme.shallow(<Nav {...defaultProps} />);
+    nav = Enzyme.shallow(<Nav {...defaultProps} isLoggedIn={false} />);
+    navItemsList = nav.find('ul').at(1);
   });
 
   it('should contain a home item as first item', () => {
-    const list = nav.find('ul');
-
-    const homeItem = list.childAt(0);
+    const homeItem = navItemsList.childAt(0);
     expect(homeItem.type()).to.equal(NavItem);
     expect(homeItem.props().title).to.equal(strings.nav.home);
     expect(homeItem.props().route).to.equal(appRoutes.home);
   });
 
   it('should contain a problems nav item as second item', () => {
-    const list = nav.find('ul');
-
-    const homeItem = list.childAt(1);
+    const homeItem = navItemsList.childAt(1);
     expect(homeItem.type()).to.equal(NavItem);
     expect(homeItem.props().title).to.equal(strings.nav.problems);
     expect(homeItem.props().route).to.equal(appRoutes.problems);
@@ -42,17 +40,14 @@ describe('<Nav />', () => {
   });
 
   it('should not contain any logged in items if not logged in ', () => {
-    const list = nav.find('ul');
-
-    expect(list.children()).to.have.length(3);
+    expect(navItemsList.children()).to.have.length(3);
   });
 
   it('should contain a profile nav item as item 2 if logged in', () => {
     nav = Enzyme.shallow(<Nav {...defaultProps} isLoggedIn />);
+    navItemsList = nav.find('ul').at(1);
 
-    const list = nav.find('ul');
-
-    const profileItem = list.childAt(2);
+    const profileItem = navItemsList.childAt(2);
     expect(profileItem.type()).to.equal(NavItem);
     expect(profileItem.props().title).to.equal(strings.nav.profile);
     expect(profileItem.props().route).to.equal(appRoutes.profile);
@@ -60,10 +55,9 @@ describe('<Nav />', () => {
 
   it('should contain a logout item if logged in', () => {
     nav = Enzyme.shallow(<Nav {...defaultProps} isLoggedIn />);
+    navItemsList = nav.find('ul').at(1);
 
-    const list = nav.find('ul');
-
-    const homeItem = list.childAt(3);
+    const homeItem = navItemsList.childAt(3);
     expect(homeItem.type()).to.equal('a');
     expect(homeItem.text()).to.equal(strings.nav.logout);
     expect(homeItem.props().href).to.equal(appRoutes.logout);

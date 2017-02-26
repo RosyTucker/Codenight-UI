@@ -8,6 +8,7 @@ import { requestLogin } from '../user/userActions';
 import Banner from './Banner';
 import FeaturedContent from './FeaturedContent';
 import LoginButton from './LoginButton';
+import { getIsLoggedIn } from '../user/userReducers';
 
 import bannerImg from '../../../client/images/homeBanner.jpg';
 
@@ -23,7 +24,7 @@ const style = {
   }
 };
 
-const Home = ({ onLoginClicked }) => {
+const Home = ({ onLoginClicked, isLoggedIn }) => {
   const { bannerTitle, featuredContent } = strings.home;
   const featuredContentUser = {
     name: featuredContent.name,
@@ -38,7 +39,7 @@ const Home = ({ onLoginClicked }) => {
         <FeaturedContent user={featuredContentUser} />
         <div style={style.loginContainer}>
           <p style={style.mission}>{strings.home.missionStatement}</p>
-          <LoginButton onClick={onLoginClicked} />
+          {!isLoggedIn ? <LoginButton onClick={onLoginClicked} /> : null}
         </div>
       </div>
     </div>
@@ -46,10 +47,13 @@ const Home = ({ onLoginClicked }) => {
 };
 
 Home.propTypes = {
+  isLoggedIn: React.PropTypes.bool.isRequired,
   onLoginClicked: React.PropTypes.func.isRequired
 };
 
-const mapStateToProps = () => ({});
+const mapStateToProps = state => ({
+  isLoggedIn: getIsLoggedIn(state)
+});
 
 const mapDispatchToProps = dispatch => ({
   onLoginClicked: () => dispatch(requestLogin())

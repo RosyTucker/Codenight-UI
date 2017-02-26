@@ -3,6 +3,7 @@ const primaryColor = '#FA023C';
 export default {
   primaryColor,
   primaryColorDark: '#FA023C',
+  accentColor: '#88C100',
   backgroundDark: '#666666',
   dividerColor: '#E0E0E0',
   darkTextColor: '#2E2E2E',

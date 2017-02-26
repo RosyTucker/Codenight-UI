@@ -35,6 +35,7 @@ const style = {
     fontWeight: theme.lightFontWeight,
     fontSize: theme.largeFontSize,
     color: theme.lightestTextColor,
+    textDecoration: 'none',
     '@media only screen and (max-width: 480px)': {
       display: 'none'
     }
@@ -59,7 +60,9 @@ const loggedInItems = [
 
 const Nav = props => (
   <nav style={style.nav}>
-    <span style={style.title}>{strings.nav.title}</span>
+    <ul style={style.list}>
+      <NavItem style={style.title} title={strings.nav.title} route={appRoutes.home} />
+    </ul>
     <ul style={style.list}>
       <NavItem key={appRoutes.home} title={strings.nav.home} route={appRoutes.home} />
       <NavItem key={appRoutes.problems} title={strings.nav.problems} route={appRoutes.problems} />
@@ -71,12 +74,8 @@ const Nav = props => (
 );
 
 Nav.propTypes = {
-  isLoggedIn: React.PropTypes.bool,
+  isLoggedIn: React.PropTypes.bool.isRequired,
   onLogin: React.PropTypes.func.isRequired
-};
-
-Nav.defaultProps = {
-  isLoggedIn: false
 };
 
 export default Radium(Nav);

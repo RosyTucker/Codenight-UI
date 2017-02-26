@@ -14,7 +14,7 @@ describe('<Home />', () => {
   beforeEach(() => {
     onLoginClicked = sinon.spy();
 
-    home = Enzyme.shallow(<Home onLoginClicked={onLoginClicked} />);
+    home = Enzyme.shallow(<Home onLoginClicked={onLoginClicked} isLoggedIn={false} />);
   });
 
   it('should contain a banner', () => {
@@ -38,5 +38,11 @@ describe('<Home />', () => {
     loginButton.props().onClick();
 
     expect(onLoginClicked.calledOnce).to.equal(true);
+  });
+
+  it('should hide login button when logged in', () => {
+    home = Enzyme.shallow(<Home onLoginClicked={onLoginClicked} isLoggedIn />);
+    const loginButton = home.find(LoginButton);
+    expect(loginButton).to.have.length(0);
   });
 });

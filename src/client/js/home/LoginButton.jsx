@@ -14,6 +14,7 @@ const style = {
   fontWeight: theme.lightFontWeight,
   fontSize: theme.largeFontSize,
   textDecoration: 'none',
+  outline: 'none',
   textShadow: 0,
   textTransform: 'uppercase',
   ':hover': {

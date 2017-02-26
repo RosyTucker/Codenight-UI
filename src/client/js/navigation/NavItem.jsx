@@ -21,16 +21,22 @@ const style = {
 };
 
 const NavItem = props => (
-  <li><StyledLink style={style.link} to={props.route}>{props.title}</StyledLink></li>
+  <li>
+    <StyledLink style={props.style || style.link} to={props.route}>
+      {props.title}
+    </StyledLink>
+  </li>
 );
 
 NavItem.propTypes = {
   title: React.PropTypes.string,
-  route: React.PropTypes.string.isRequired
+  route: React.PropTypes.string.isRequired,
+  style: React.PropTypes.shape({})
 };
 
 NavItem.defaultProps = {
-  title: ''
+  title: '',
+  style: null
 };
 
 export default Radium(NavItem);
