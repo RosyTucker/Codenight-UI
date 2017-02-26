@@ -16,7 +16,12 @@ app.use(express.static(`${__dirname}/client`));
 
 app.post('/', (req, res) => {
   res.cookie('Auth', req.body.jwtToken, { secure: isProduction });
-  return res.redirect('/');
+  res.redirect('/');
+});
+
+app.get('/logout', (req, res) => {
+  res.clearCookie('Auth');
+  res.redirect('/');
 });
 
 app.get('/', (req, res) => {

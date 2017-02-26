@@ -58,14 +58,14 @@ describe('<Nav />', () => {
     expect(profileItem.props().route).to.equal(appRoutes.profile);
   });
 
-  it('should contain a logout nav item as item 3 if logged in', () => {
+  it('should contain a logout item if logged in', () => {
     nav = Enzyme.shallow(<Nav {...defaultProps} isLoggedIn />);
 
     const list = nav.find('ul');
 
     const homeItem = list.childAt(3);
-    expect(homeItem.type()).to.equal(NavItem);
-    expect(homeItem.props().title).to.equal(strings.nav.logout);
-    expect(homeItem.props().route).to.equal(appRoutes.logout);
+    expect(homeItem.type()).to.equal('a');
+    expect(homeItem.text()).to.equal(strings.nav.logout);
+    expect(homeItem.props().href).to.equal(appRoutes.logout);
   });
 });

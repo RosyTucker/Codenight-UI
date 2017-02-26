@@ -4,8 +4,8 @@ import Radium from 'radium';
 import theme from '../common/theme';
 import NavItem from './NavItem';
 import SignInNavItem from './SignInNavItem';
-import Strings from '../common/strings';
-import AppRoutes from './appRoutes';
+import strings from '../common/strings';
+import appRoutes from './appRoutes';
 
 const style = {
   nav: {
@@ -38,23 +38,34 @@ const style = {
     '@media only screen and (max-width: 480px)': {
       display: 'none'
     }
+  },
+  logout: {
+    display: 'inline-block',
+    color: theme.lightestTextColor,
+    padding: '15px 20px',
+    margin: '0 2px',
+    textDecoration: 'none',
+    ':hover': {
+      background: theme.lightestTextColor,
+      color: theme.primaryColor
+    }
   }
 };
 
 const loggedInItems = [
-  <NavItem title={Strings.nav.profile} key={AppRoutes.profile} route={AppRoutes.profile} />,
-  <NavItem title={Strings.nav.logout} key={AppRoutes.logout} route={AppRoutes.logout} />
+  <NavItem title={strings.nav.profile} key={appRoutes.profile} route={appRoutes.profile} />,
+  <a style={style.logout} key={appRoutes.logout} href={appRoutes.logout}>{strings.nav.logout}</a>
 ];
 
 const Nav = props => (
   <nav style={style.nav}>
-    <span style={style.title}>{Strings.nav.title}</span>
+    <span style={style.title}>{strings.nav.title}</span>
     <ul style={style.list}>
-      <NavItem key={AppRoutes.home} title={Strings.nav.home} route={AppRoutes.home} />
-      <NavItem key={AppRoutes.problems} title={Strings.nav.problems} route={AppRoutes.problems} />
+      <NavItem key={appRoutes.home} title={strings.nav.home} route={appRoutes.home} />
+      <NavItem key={appRoutes.problems} title={strings.nav.problems} route={appRoutes.problems} />
       {props.isLoggedIn
         ? loggedInItems
-        : <SignInNavItem onClick={props.onLogin} title={Strings.nav.login} />}
+        : <SignInNavItem onClick={props.onLogin} title={strings.nav.login} />}
     </ul>
   </nav>
 );
